@@ -47,7 +47,7 @@ proc main() =
 
   discard workbook_close(workbook)
 
-main()
+main()```
 
 Refer to the ```tests``` diretory for examples on how the library can be used.
 
