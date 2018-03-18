@@ -6,7 +6,7 @@
 #
 #
 
-import xlsxwriter
+import nimlibxlsxwriter/xlsxwriter
 
 proc main() =
   var workbook: ptr lxw_workbook = new_workbook("doc_custom_properties.xlsx")

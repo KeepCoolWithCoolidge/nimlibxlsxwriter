@@ -7,7 +7,7 @@
 #
 #
 
-import xlsxwriter
+import nimlibxlsxwriter/xlsxwriter
 
 proc main() =
   # A number to display as a date
