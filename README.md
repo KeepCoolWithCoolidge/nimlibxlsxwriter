@@ -15,7 +15,7 @@ Nimlibxlsxwriter can be installed via [Nimble](https://github.com/nim-lang/nimbl
 __Usage__
 
 ```nim
-import xlsxwriter
+import nimlibxlsxwriter/xlsxwriter
 
 proc main() =
   
