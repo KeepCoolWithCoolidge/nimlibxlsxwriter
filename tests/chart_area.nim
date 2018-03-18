@@ -6,7 +6,7 @@
 #
 #
 
-import ../nimlibxlsxwriter/xlsxwriter
+import xlsxwriter
 
 # Write some data to the worksheet
 proc write_worksheet_data(worksheet: ptr lxw_worksheet, bold: ptr lxw_format) =

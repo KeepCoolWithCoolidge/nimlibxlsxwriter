@@ -5,7 +5,7 @@
 #
 #
 
-import ../nimlibxlsxwriter/xlsxwriter
+import xlsxwriter
 
 proc main() =
   # A datetime to display
