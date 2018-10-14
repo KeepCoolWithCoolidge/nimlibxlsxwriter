@@ -10,6 +10,8 @@ Nimlibxlsxwriter can be installed via [Nimble](https://github.com/nim-lang/nimbl
 > nimble install nimgen
 
 > nimble install nimlibxlsxwriter
+
+> nimble setup nimlibxlsxwriter
 ```
 
 __Usage__
