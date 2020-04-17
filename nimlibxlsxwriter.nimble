@@ -1,12 +1,13 @@
 # Package
 
-version       = "0.1.1"
+version       = "0.1.2"
 author        = "KeepCoolWithCoolidge"
 description   = "libxslxwriter wrapper for Nim"
 license       = "MIT"
 
 # Dependencies
 
+requires "nim >= 1.2.0"
 requires "nimgen >= 0.1.4"
 
 import distros
