@@ -1,0 +1,3 @@
+nimlibxlsxwriter/
+tests/
+!tests/*.nim
