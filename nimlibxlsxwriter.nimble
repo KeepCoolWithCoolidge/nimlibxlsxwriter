@@ -9,6 +9,7 @@ license       = "MIT"
 
 requires "nim >= 1.2.0"
 requires "nimgen >= 0.1.4"
+requires "c2nim >= 0.9.14"
 
 import distros
 
