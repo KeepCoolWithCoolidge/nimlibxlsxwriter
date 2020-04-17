@@ -7,11 +7,11 @@ __Installation__
 Nimlibxlsxwriter can be installed via [Nimble](https://github.com/nim-lang/nimble):
 
 ```
-> nimble install nimgen
-
-> nimble install nimlibxlsxwriter
-
-> nimble setup nimlibxlsxwriter
+$ nimble install nimlibxlsxwriter
+# or
+$ git clone https://github.com/KeepCoolWithCoolidge/nimlibxlsxwriter.git
+$ cd nimlibxlsxwriter
+$ nimble install
 ```
 
 __Usage__
