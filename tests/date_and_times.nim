@@ -14,7 +14,7 @@ proc main() =
   var number: float64 = 41333.5
 
   #  Create a new workbook and add a worksheet
-  var workbook: ptr lxw_workbook = new_workbook("date_and_times.xlsx")
+  var workbook: ptr lxw_workbook = workbook_new("date_and_times.xlsx")
   var worksheet: ptr lxw_worksheet = workbook_add_worksheet(workbook, nil)
 
   #  Add a format with date formatting.

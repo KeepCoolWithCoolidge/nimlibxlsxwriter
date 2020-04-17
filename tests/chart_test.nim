@@ -21,7 +21,7 @@ proc write_worksheet_data(worksheet: ptr lxw_worksheet) =
       discard worksheet_write_number(worksheet, row, col, data[row][col], nil)
 
 proc main() =
-  var workbook: ptr lxw_workbook = new_workbook("chart.xlsx")
+  var workbook: ptr lxw_workbook = workbook_new("chart.xlsx")
   var worksheet: ptr lxw_worksheet = workbook_add_worksheet(workbook, nil)
 
   # Write some data for the chart.

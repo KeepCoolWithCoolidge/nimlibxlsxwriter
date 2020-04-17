@@ -45,7 +45,7 @@ proc write_worksheet_data(worksheet: ptr lxw_worksheet, bold: ptr lxw_format) =
 # Create a worksheet with examples charts.
 #
 proc main() =
-  var workbook: ptr lxw_workbook = new_workbook("chart_clustered2.xlsx")
+  var workbook: ptr lxw_workbook = workbook_new("chart_clustered2.xlsx")
   var worksheet: ptr lxw_worksheet = workbook_add_worksheet(workbook, nil)
   var chart: ptr lxw_chart = workbook_add_chart(workbook, LXW_CHART_COLUMN.uint8)
   var series: ptr lxw_chart_series
