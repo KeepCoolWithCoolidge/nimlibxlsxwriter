@@ -8,7 +8,7 @@ license       = "MIT"
 # Dependencies
 
 requires "nim >= 1.2.0"
-requires "nimgen >= 0.1.4"
+requires "nimgen >= 0.5.2"
 requires "c2nim >= 0.9.14"
 
 import distros
