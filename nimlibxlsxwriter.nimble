@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.2"
+version       = "0.1.3"
 author        = "KeepCoolWithCoolidge"
 description   = "libxslxwriter wrapper for Nim"
 license       = "MIT"
