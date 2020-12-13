@@ -1,20 +1,26 @@
+# Nimlibxlsxwriter
+
+*This is a working fork from [KeepCoolWithCoolidge](https://github.com/KeepCoolWithCoolidge/nimlibxlsxwriter) updated to work with current versions of Nim.*
+
+# General
+
 Nimlibxlsxwriter is a [Nim](https://nim-lang.org/) wrapper for the [libxlsxwriter](https://github.com/jmcnamara/libxlsxwriter) library.
 
 Nimlibxlsxwriter is distributed as a [Nimble](https://github.com/nim-lang/nimble) package and depends on [nimgen](https://github.com/genotrance/nimgen) and [c2nim](https://github.com/nim-lang/c2nim/) to generate the wrappers. The libxlsxwriter source code is downloaded using Git so having ```git``` in the path is required.
 
-__Installation__
+# Installation
 
 Nimlibxlsxwriter can be installed via [Nimble](https://github.com/nim-lang/nimble):
 
 ```
 $ nimble install nimlibxlsxwriter
 # or
-$ git clone https://github.com/KeepCoolWithCoolidge/nimlibxlsxwriter.git
+$ git clone https://github.com/ThomasTJdev/nimlibxlsxwriter
 $ cd nimlibxlsxwriter
 $ nimble install
 ```
 
-__Usage__
+# Usage
 
 ```nim
 import nimlibxlsxwriter/xlsxwriter
@@ -54,12 +60,10 @@ main()
 
 Refer to the ```tests``` diretory for examples on how the library can be used.
 
-__Credits__
+# Credits
 
 Nimlibxlsxwriter wraps the libxlsxwriter source code and all licensing terms of [libxlsxwriter](https://github.com/jmcnamara/libxlsxwriter) apply to the usage of this package.
 
 Credits go out to [c2nim](https://github.com/nim-lang/c2nim/) as well without which this package would be greatly limited in its abilities.
 
-__Feedback__
-
-Nimlibxlsxwriter is a work in progress and any feedback or suggestions are welcome. It is hosted on [GitHub](https://github.com/KeepCoolWithCoolidge/nimlibxlsxwriter) and issues, forks and PRs are most appreciated.
+Credits to original author [KeepCoolWithCoolidge](https://github.com/KeepCoolWithCoolidge).
