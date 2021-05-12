@@ -1,9 +1,10 @@
 # Package
 
-version       = "0.1.3"
-author        = "KeepCoolWithCoolidge"
+version       = "0.1.4"
+author        = "Original: KeepCoolWithCoolidge / Fork: ThomasTJdev"
 description   = "libxslxwriter wrapper for Nim"
 license       = "MIT"
+skipDirs      = @["tests"]
 
 # Dependencies
 
