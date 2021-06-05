@@ -24,6 +24,10 @@ jobs:
       with:
         nim-version: ${{ matrix.version }}
 
+    - name: copy libxlsxwriter.so to /usr/lib
+      run: |
+        sudo cp nimlibxlsxwriter/include/libxlsxwriter.so /usr/lib/libxlsxwriter.so
+
     - name: Print Nim version
       run: nim -v
 
