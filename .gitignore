@@ -1,2 +1,4 @@
-tests/
+tests/*
+
 !tests/*.nim
+!tests/config.nims
