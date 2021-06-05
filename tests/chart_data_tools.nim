@@ -149,8 +149,8 @@ proc main() =
   series = chart_add_series(chart, "=Sheet1!$A$2:$A$7", "=Sheet1!$C$2:$B$7")
 
   # Add error bars to show Standard Error.
-  chart_series_set_error_bars(series.y_error_bars, 
-                              LXW_CHART_ERROR_BAR_TYPE_STD_ERROR.uint8, 0)
+  #chart_series_set_error_bars(series.y_error_bars, 
+  #                            LXW_CHART_ERROR_BAR_TYPE_STD_ERROR.uint8, 0)
                               
   # Add series data labels.
   chart_series_set_labels(series)

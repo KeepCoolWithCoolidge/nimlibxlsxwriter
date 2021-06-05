@@ -6,7 +6,7 @@
 
 Nimlibxlsxwriter is a [Nim](https://nim-lang.org/) wrapper for the [libxlsxwriter](https://github.com/jmcnamara/libxlsxwriter) library.
 
-Nimlibxlsxwriter is distributed as a [Nimble](https://github.com/nim-lang/nimble) package and depends on [nimgen](https://github.com/genotrance/nimgen) and [c2nim](https://github.com/nim-lang/c2nim/) to generate the wrappers. The libxlsxwriter source code is downloaded using Git so having ```git``` in the path is required.
+Nimlibxlsxwriter is distributed as a [Nimble](https://github.com/nim-lang/nimble) package and includes the libxlsxwriter source code.
 
 # Installation
 
@@ -26,7 +26,7 @@ $ nimble install
 import nimlibxlsxwriter/xlsxwriter
 
 proc main() =
-  
+
   # Create a new workbook and add a worksheet
   var workbook: ptr lxw_workbook = workbook_new("demo.xlsx")
   var worksheet: ptr lxw_worksheet = workbook_add_worksheet(workbook, nil)
@@ -63,7 +63,3 @@ Refer to the ```tests``` diretory for examples on how the library can be used.
 # Credits
 
 Nimlibxlsxwriter wraps the libxlsxwriter source code and all licensing terms of [libxlsxwriter](https://github.com/jmcnamara/libxlsxwriter) apply to the usage of this package.
-
-Credits go out to [c2nim](https://github.com/nim-lang/c2nim/) as well without which this package would be greatly limited in its abilities.
-
-Credits to original author [KeepCoolWithCoolidge](https://github.com/KeepCoolWithCoolidge).

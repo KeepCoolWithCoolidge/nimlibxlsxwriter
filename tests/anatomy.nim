@@ -9,7 +9,7 @@ import nimlibxlsxwriter/xlsxwriter
 import strutils
 
 proc main() =
- 
+
   # Create a new workbook.
   var workbook: ptr lxw_workbook = workbook_new("anatomy.xlsx")
 
