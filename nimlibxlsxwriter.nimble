@@ -1,15 +1,18 @@
 # Package
 
 version       = "0.2.0"
-author        = "KeepCoolWithCoolidge"
+author        = "Original: KeepCoolWithCoolidge / Fork: ThomasTJdev"
 description   = "libxslxwriter wrapper for Nim"
 license       = "MIT"
 
 # Dependencies
-
 requires "nim >= 1.2.0"
 
 import distros
+
+task setup, "Check OS":
+  if detectOs(Windows):
+    quit("Cannot run on Windows. Checkout PR #4 for support")
 
 task test, "Run tests":
   withDir("tests"):
@@ -26,3 +29,6 @@ task test, "Run tests":
     exec "nim c -r date_and_times.nim"
     exec "nim c -r date_and_times_2.nim"
     exec "nim c -r date_and_times_3.nim"
+
+before install:
+  setupTask()
