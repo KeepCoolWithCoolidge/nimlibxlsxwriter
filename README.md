@@ -4,9 +4,20 @@
 
 # General
 
-Nimlibxlsxwriter is a [Nim](https://nim-lang.org/) wrapper for the [libxlsxwriter](https://github.com/jmcnamara/libxlsxwriter) library.
+Nimlibxlsxwriter is a [Nim](https://nim-lang.org/) wrapper for the
+[libxlsxwriter](https://github.com/jmcnamara/libxlsxwriter) library.
 
-Nimlibxlsxwriter is distributed as a [Nimble](https://github.com/nim-lang/nimble) package and includes the libxlsxwriter source code.
+
+# OS support
+
+Due to multiple reasons (see issue and PR's) this library now only supports
+Linux. Instead of generating the Nim files on the fly with `nimgen` and `c2nim`
+and using the newest updates from `libxlsxwriter`, we now have the
+pre-created nim-files located in the `nimlibxlsxwriter`.
+
+If anyone wants to give a shot on refactoring and redoing the code please be my
+guest.
+
 
 # Installation
 
@@ -18,6 +29,17 @@ $ nimble install nimlibxlsxwriter
 $ git clone https://github.com/ThomasTJdev/nimlibxlsxwriter
 $ cd nimlibxlsxwriter
 $ nimble install
+```
+
+## Dynamic XLSX library
+This is required before installing the nimble package. It might already be
+available on your system.
+
+You need to build the original C sourcecode to generate the dynamic library, see
+the [how to here](http://libxlsxwriter.github.io/getting_started.html), or you
+can cheat, cross your fingers and do it like Github Actions:
+```
+$ cp nimlibxlsxwriter/include/libxlsxwriter.so /usr/lib/libxlsxwriter.so
 ```
 
 # Usage
@@ -62,4 +84,6 @@ Refer to the ```tests``` diretory for examples on how the library can be used.
 
 # Credits
 
-Nimlibxlsxwriter wraps the libxlsxwriter source code and all licensing terms of [libxlsxwriter](https://github.com/jmcnamara/libxlsxwriter) apply to the usage of this package.
+Nimlibxlsxwriter wraps the libxlsxwriter source code and all licensing terms of
+[libxlsxwriter](https://github.com/jmcnamara/libxlsxwriter) apply to the usage
+of this package.
