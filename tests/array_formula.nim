@@ -6,7 +6,7 @@
 #
 #
 
-import nimlibxlsxwriter/xlsxwriter
+import nimlibxlsxwriter
 
 proc main() =
 

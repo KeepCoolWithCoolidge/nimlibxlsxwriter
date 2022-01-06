@@ -4,7 +4,7 @@
 # Adapted from chart_clustered.c by John McNamara, Copyright 2014-2018
 #
 #
-import nimlibxlsxwriter/xlsxwriter
+import nimlibxlsxwriter
 
 #
 # Write some data to the worksheet.
