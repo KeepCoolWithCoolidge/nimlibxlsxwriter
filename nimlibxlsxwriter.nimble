@@ -4,6 +4,7 @@ version       = "0.3.0"
 author        = "Original: KeepCoolWithCoolidge / Fork: ThomasTJdev"
 description   = "libxslxwriter wrapper for Nim"
 license       = "MIT"
+skipDirs      = @["tests"]
 
 # Dependencies
 requires "nim >= 1.2.0"
