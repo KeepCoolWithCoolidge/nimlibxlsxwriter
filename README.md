@@ -10,13 +10,7 @@ Nimlibxlsxwriter is a [Nim](https://nim-lang.org/) wrapper for the
 
 # OS support
 
-Due to multiple reasons (see issue and PR's) this library now only supports
-Linux. Instead of generating the Nim files on the fly with `nimgen` and `c2nim`
-and using the newest updates from `libxlsxwriter`, we now have the
-pre-created nim-files located in the `nimlibxlsxwriter`.
-
-If anyone wants to give a shot on refactoring and redoing the code please be my
-guest.
+The package only supports Linux. For legacy support of Windows/Mac see [Legacy support](legacy/LEAGACY.md).
 
 
 # Installation
@@ -39,22 +33,32 @@ You need to build the original C sourcecode to generate the dynamic library, see
 the [how to here](http://libxlsxwriter.github.io/getting_started.html), or you
 can cheat, cross your fingers and do it like Github Actions:
 ```
+$ git clone https://github.com/ThomasTJdev/nimlibxlsxwriter
+$ cd nimlibxlsxwriter
+# Might need `sudo`
 $ cp nimlibxlsxwriter/include/libxlsxwriter.so /usr/lib/libxlsxwriter.so
 ```
+
+# Want more XLSX?
+
+Then checkout:
+- [xlsx](https://github.com/xflywind/xlsx): For reading and parsing XLSX files.
+- [xlsxio](https://github.com/jiiihpeeh/xlsxio-nim): For reading and writing
+
 
 # Usage
 
 ```nim
-import nimlibxlsxwriter/xlsxwriter
+import nimlibxlsxwriter
 
 proc main() =
 
   # Create a new workbook and add a worksheet
-  var workbook: ptr lxw_workbook = workbook_new("demo.xlsx")
-  var worksheet: ptr lxw_worksheet = workbook_add_worksheet(workbook, nil)
+  var workbook = workbook_new("demo.xlsx")
+  var worksheet = workbook_add_worksheet(workbook, nil)
 
   # Add a format.
-  var format: ptr lxw_format = workbook_add_format(workbook)
+  var format = workbook_add_format(workbook)
 
   # Set the bold property for the format
   format_set_bold(format)
@@ -74,6 +78,62 @@ proc main() =
 
   # Insert an image.
   discard worksheet_insert_image(worksheet, 1, 2, "logo.png");
+
+  discard workbook_close(workbook)
+
+main()
+```
+
+```nim
+import nimlibxlsxwriter
+
+proc main() =
+
+  # Create a new workbook and add a worksheet
+  var
+    workbook = workbook_new("demo2.xlsx")
+    worksheet = workbook_add_worksheet(workbook, nil)
+
+  # Text formats
+  var
+    formatHeading = workbook_add_format(workbook)
+    formatText = workbook_add_format(workbook)
+
+  # Heading
+  format_set_bold(formatHeading)
+  format_set_bg_color(formatHeading, 0x171921)
+  format_set_font_name(formatHeading, "Arial")
+  format_set_font_size(formatHeading, 12)
+  format_set_font_color(formatHeading, 0xFFFFFF)
+  format_set_border(formatHeading, 1)
+  format_set_border_color(formatHeading, 0x1000000)
+  format_set_align(formatHeading, 10)
+  format_set_align(formatHeading, 2)
+  format_set_text_wrap(formatHeading)
+
+  # Text
+  format_set_bg_color(formatText, 0xFFFFFF)
+  format_set_font_name(formatText, "Arial")
+  format_set_font_size(formatText, 10)
+  format_set_font_color(formatText, 0x1000000)
+  format_set_border(formatText, 1)
+  format_set_border_color(formatText, 0x1000000)
+  format_set_align(formatText, 10)
+  format_set_text_wrap(formatText)
+
+  # Write heading
+  discard worksheet_write_string(worksheet, 0, 0, "Nim for the win", formatHeading)
+
+  # Write some text
+  discard worksheet_set_column(worksheet, 0, 0, 15, nil) # Column width: col-A
+  discard worksheet_write_string(worksheet, 1, 0, "A-2: Procedure", formatText) # Write text
+  discard worksheet_set_row(worksheet, 1, 35.0, nil) # Change row height: row-2
+
+  discard worksheet_set_column(worksheet, 1, 1, 25, nil) # Column width: col-B
+  discard worksheet_write_string(worksheet, 2, 1, "B-3: Long procedure", formatText) # Write text
+
+  # Set print area
+  discard worksheet_print_area(worksheet, 0, 0, 2, 1)
 
   discard workbook_close(workbook)
 

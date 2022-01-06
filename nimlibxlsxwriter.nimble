@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.2.0"
+version       = "0.3.0"
 author        = "Original: KeepCoolWithCoolidge / Fork: ThomasTJdev"
 description   = "libxslxwriter wrapper for Nim"
 license       = "MIT"
@@ -10,9 +10,11 @@ requires "nim >= 1.2.0"
 
 import distros
 
+
+
 task setup, "Check OS":
   if detectOs(Windows):
-    quit("Cannot run on Windows. Checkout PR #4 for support")
+    quit("Cannot run on Windows. Checkout legacy/LEGACY.md for support")
 
 task test, "Run tests":
   withDir("tests"):
