@@ -5,7 +5,7 @@
 #
 #
 
-import nimlibxlsxwriter/xlsxwriter
+import nimlibxlsxwriter
 import strutils
 
 proc main() =
