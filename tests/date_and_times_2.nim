@@ -6,14 +6,14 @@
 #
 #
 
-import nimlibxlsxwriter/xlsxwriter
+import nimlibxlsxwriter
 
 proc main() =
   # A datetime to display
   var datetime: lxw_datetime = lxw_datetime(year: 2013, month: 2, day: 28, hour: 12, min: 0, sec: 0.0)
 
   #  Create a new workbook and add a worksheet
-  var workbook: ptr lxw_workbook = new_workbook("date_and_times_2.xlsx")
+  var workbook: ptr lxw_workbook = workbook_new("date_and_times_2.xlsx")
   var worksheet: ptr lxw_worksheet = workbook_add_worksheet(workbook, nil)
 
   #  Add a format with date formatting.

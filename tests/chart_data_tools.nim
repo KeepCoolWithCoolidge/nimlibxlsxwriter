@@ -8,7 +8,7 @@
 #
 #
 
-import nimlibxlsxwriter/xlsxwriter
+import nimlibxlsxwriter
 
 # Write some data to the worksheet
 proc write_worksheet_data(worksheet: ptr lxw_worksheet, bold: ptr lxw_format) =
@@ -29,7 +29,7 @@ proc write_worksheet_data(worksheet: ptr lxw_worksheet, bold: ptr lxw_format) =
 
 # Create a worksheet with examples charts
 proc main() =
-  var workbook: ptr lxw_workbook = new_workbook("chart_data_tools.xlsx")
+  var workbook: ptr lxw_workbook = workbook_new("chart_data_tools.xlsx")
   var worksheet: ptr lxw_worksheet = workbook_add_worksheet(workbook, nil)
   var series: ptr lxw_chart_series
 
@@ -149,8 +149,8 @@ proc main() =
   series = chart_add_series(chart, "=Sheet1!$A$2:$A$7", "=Sheet1!$C$2:$B$7")
 
   # Add error bars to show Standard Error.
-  chart_series_set_error_bars(series.y_error_bars, 
-                              LXW_CHART_ERROR_BAR_TYPE_STD_ERROR.uint8, 0)
+  #chart_series_set_error_bars(series.y_error_bars, 
+  #                            LXW_CHART_ERROR_BAR_TYPE_STD_ERROR.uint8, 0)
                               
   # Add series data labels.
   chart_series_set_labels(series)

@@ -5,7 +5,7 @@
 #
 #
 
-import nimlibxlsxwriter/xlsxwriter
+import nimlibxlsxwriter
 
 proc main() =
   # A datetime to display
@@ -30,7 +30,7 @@ proc main() =
                                     "hh:mm:ss.000"]
   
   # Create a workbook and add a worksheet
-  var workbook: ptr lxw_workbook = new_workbook("date_and_times_3.xlsx")
+  var workbook: ptr lxw_workbook = workbook_new("date_and_times_3.xlsx")
   var worksheet: ptr lxw_worksheet = workbook_add_worksheet(workbook, nil)
 
   # Add a bold format.

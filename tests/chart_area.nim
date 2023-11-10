@@ -6,7 +6,7 @@
 #
 #
 
-import nimlibxlsxwriter/xlsxwriter
+import nimlibxlsxwriter
 
 # Write some data to the worksheet
 proc write_worksheet_data(worksheet: ptr lxw_worksheet, bold: ptr lxw_format) =
@@ -27,7 +27,7 @@ proc write_worksheet_data(worksheet: ptr lxw_worksheet, bold: ptr lxw_format) =
 
 # Create a worksheet with examples charts
 proc main() =
-  var workbook: ptr lxw_workbook = new_workbook("chart_area.xlsx")
+  var workbook: ptr lxw_workbook = workbook_new("chart_area.xlsx")
   var worksheet: ptr lxw_worksheet = workbook_add_worksheet(workbook, nil)
   var series: ptr lxw_chart_series
 
